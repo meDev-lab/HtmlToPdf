@@ -2,16 +2,22 @@
   <div class="container">
     <div class="cabinet">
       <div class="cabinet__head">
-        <h1>Петров Иван Иванович</h1>
+        <h1>
+          <%= data.fio ? data.fio : 'Ваш отчет' %>
+        </h1>
 
-        <img src="img/logo.svg" alt="logo-icon" />
+        <img src="/img/logo.svg" alt="logo-icon" />
       </div>
       <!-- cabinet__head -->
 
       <div class="cabinet__info">
         <div class="cabinet__info-data">
-          <h2>Дневник волчанки</h2>
-          <span>1 апреля – 7 апреля</span>
+          <h2>
+            <%= data.diaryName %>
+          </h2>
+          <span>
+            <%= data.dateRange %>
+          </span>
         </div>
         <!-- cabinet__info-data -->
 
@@ -22,13 +28,16 @@
       </div>
       <!-- cabinet__info -->
 
-      <div class="cabinet__content" data-data=<%- data %> id="hui">
+      <div class="cabinet__content">
         <div class="cabinet__content-item">
-          <h2>Тяжесть симптомов</h2>
+          <h2>Тяжесть симптомов </h2>
           <!-- graph -->
           <div class="graph">
             <canvas id="simptiomChart1" width="500" height="200"></canvas>
             <script>
+
+              console.log('<%= data.fio %>');
+
               var ctxOne = document.getElementById("simptiomChart1");
               var arrEmogyOne = [
                 "\uf59a",
@@ -48,7 +57,6 @@
               ];
 
               material_font.load().then(() => {
-               
                 var myChartOne = new Chart(ctxOne, {
                   type: "line",
                   data: {
@@ -56,7 +64,7 @@
                     datasets: [
                       {
                         label: "Недельный график",
-                        data: JSON.parse(document.getElementById('hui').dataset.data),
+                        data: [1, 1, 5, 3, 2, 4, 2],
                         borderColor: "#0684F8",
                         backgroundColor: "transparent",
                         pointBackgroundColor: "white",

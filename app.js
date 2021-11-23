@@ -26,14 +26,34 @@ render(app, {
 //   return next();
 // });
 
+// [1, 1, 5, 3, 2, 4, 2]
+
 router.get("/", async (ctx, next) => {
   const data = {
-    fio: 'иванов иван петрович',
-    arr: [1, 1, 5, 3, 2, 4, 2]
+    fio: 'Иванов Иван Петрович',
+    diaryName: 'Дневник волчанки',
+    dateRange: '1 апреля – 7 апреля',
+    simptoms: [
+      {
+        simptomName: 'Название_симптома_1',
+        simptomsArr: [
+          { id: '1', timeStamp: '10-05-21:08:00:00', severity: "Сильно", cause: "Стресс", note: "Стало лучше" }
+        ]
+      },
+      {
+        simptomName: 'Название_симптома_2',
+        simptomsArr: [
+          { id: '1', timeStamp: '10-05-21:08:00:00', severity: "Сильно", cause: "Стресс", note: "Стало лучше" }
+        ]
+      },
+    ],
+    impactOnLife: [
+      { id: '1', timeStamp: '10-05-21:08:00:00', influence: "Сильно" }
+    ]
   };
   await ctx.render("content", {
     hello: "world",
-    data: JSON.stringify(data),
+    data: data,
   });
 });
 
