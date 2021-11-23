@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cabinet</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script>
+		var ctx = document.getElementById('simptiomChart1');
+		const material_font = new FontFace(
+			"material-icons",
+			"url(fa-solid-900.ttf)"
+		);
+		document.fonts.add(material_font);
+	</script>
+</head>
+
+<body>
+	<section class="section-cabinet">
+		<div class="container">
+			<div class="cabinet">
+				<div class="cabinet__head">
+					<h1>Петров Иван Иванович</h1>
+
+					<img src="img/logo.svg" alt="logo-icon">
+				</div>
+				<!-- cabinet__head -->
+
+				<div class="cabinet__info">
+					<div class="cabinet__info-data">
+						<h2>Дневник волчанки</h2>
+						<span>1 апреля – 7 апреля</span>
+					</div>
+					<!-- cabinet__info-data -->
+
+					<div class="cabinet__info-sponsor">
+						При поддержке компании «АстраЗенека»
+					</div>
+					<!-- cabinet__info-sponsor -->
+				</div>
+				<!-- cabinet__info -->
+
+				<div class="cabinet__content">
+					<div class="empty">
+						<img src="./img/iconEmpty.svg" alt="empty-logo">
+						<h2>За выбранный период нет данных для формирования отчета</h2>
+					</div>
+				</div>
+				<!-- cabinet__content -->
+
+				<div class="cabinet__footer">
+					<span>2</span>
+				</div>
+				<!-- cabinet__footer -->
+
+			</div>
+		</div>
+	</section>
+</body>
+
+</html>
